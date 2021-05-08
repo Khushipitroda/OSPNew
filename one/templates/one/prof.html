@@ -1,0 +1,40 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+	h5{
+		font-size: 20px;
+		
+		display: inline;
+	}
+	p{
+		display: inline;
+	}
+</style>
+{% endblock %}
+
+
+{% block body %}
+		<section class="container my-5">
+				<div class="row mt-5">
+					<div class="col-md-8 posts-w3ls mt-md-0 mt-4">
+						{{msg}}
+						 <div class="heading_main text_align_left">
+						   <h2><span class="theme_color">{{request.user.first_name}} {{request.user.last_name}}</h2>
+                        </div>
+						<h2><u><b>Email: </b></u>{{request.user.email}}</h2><br>
+						<h2><u><b>Contact: </b></u>{{user_info.contact}}</h2><br>
+						<h2><u><b>Role: </b></u>{{user_info.role}}</h2><br>
+						<h2><u><b>Occuptaion: </b></u>{{user_info.occupation}}</h2><br>
+						<h2><u><b>Adhar Number: </b></u>{{user_info.anumber}}</h2><br>
+						{% for key, value in l2.items %}
+						<h2><u><b>{{key}}: </b></u><a href="{{value.url}}" target="_blank">View</a></h2><br>
+						{% endfor %}
+						
+					</div>
+				</div>
+		</section>
+
+
+{% endblock %}

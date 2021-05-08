@@ -1,0 +1,93 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+image{
+height:100%;
+width:100%;
+}
+
+</style>
+{% endblock %}
+{% block body %}
+    {{msg}}
+    <!-- Start Banner -->
+    <div class="ulockd-home-slider">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="pogoSlider" id="js-main-slider">
+                    <div class="pogoSlider-slide">
+                        <a href="{%url 'posts'%}"><img src="{% static 'images/news.jpg' %}"class="image" style="height:100%;width:100%;"></a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text white_fonts">
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="pogoSlider-slide">
+                        <a href="{%url 'post-bills'%}"><img src="{% static 'images/bills.jpg' %}" class="image" style="height:100%;width:100%;"></a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text white_fonts">
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="pogoSlider-slide">
+                        <a href="{%url 'policies'%}"><img src="{% static 'images/subsidies.jpg' %}" class="image" style="height:100%;width:100%;"></a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text white_fonts">
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="pogoSlider-slide">
+                        <a href="{%url 'policies'%}"><img src="{% static 'images/schemes.jpg' %}" class="image" style="height:100%;width:100%;"></a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text white_fonts">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+	<!-- section -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full text_align_right_img">
+                        <img src=" {% static 'images/home.png' %} " alt="#" style="padding-top:50px;"/>
+                    </div>
+                </div>
+                <div class="col-md-6 layout_padding">
+                    <div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+						   <h2><span class="theme_color">Welcome</span> To One Stop Government Portal </h2>
+                        </div>
+                    </div>
+                    <div class="full paddding_left_15">
+                        <p>"One-stop Government Portal" is made for the convenience of the Indian citizen. It has been developed under the National E-Governance Plan (NEGP).
+The main objective of this Portal is to provide one-stop access to information and services provided by the Indian Government. It is our goal to continue to enhance and enrich this portal in terms of content covered, design n technology on regular basis.</p>
+                    </div>
+                    <div class="full paddding_left_15">
+                        <a class="main_bt" href=" {% url 'about' %}">More ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

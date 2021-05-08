@@ -1,0 +1,47 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+{% block body %}
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>Policies</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End B -->
+    <!-- Start Banner -->
+     <div class="section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+                           <a href=" {% url 'subsidies' %} "><h2><span class="theme_color"></span>Subsidies</h2> </a>
+                          <a href="/one/policies-scheme/"> <h2><span class="theme_color"></span>Schemes</h2>  </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            {% for policy in policy %}
+              {% if policy.policies_for == policy_for %}            
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog my-5">
+                       <img src="{{policy.logo.url}}" style="height: 40vh; width: 100%;">
+                       <div class="overlay"><a class="main_bt transparent" href="/one/view_policy/{{policy.id}}/">View</a></div>
+                       <div class="blog_details">
+                         <h3>{{policy.name}}</h3>
+                         <p>{{policy.date}}</p>
+                       </div>
+                    </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}

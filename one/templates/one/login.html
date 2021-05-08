@@ -1,0 +1,46 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+
+{% block body %}
+    <!-- Start Banner -->
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>Log In</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+
+    <!-- contact_form -->
+   <div class="section contact_form">
+        <div class="container">
+                <div class=" offset-lg-3">
+                    <div>
+                       <form id="login" action="{% url 'login' %}" method="post" style="margin-top:50px; margin-bottom: 100px; ">
+                        <h1 id="ff-proof" class="ribbon">One Stop Portal&nbsp;&nbsp;</h1>
+                        {% csrf_token %}
+                        {{msg}}
+                        <fieldset id="inputs">
+                            <input id="username" name="adhar" type="text"  onfocus="if(this.value=='Pseudo ID')this.value='';" placeholder="Adhar Card Number" />
+                            <input id="password" name="pass" type="password"  onfocus="if(this.value=='Pssword')this.value='';" placeholder="Password" />                          </fieldset>
+                        <fieldset id="actions">
+                            <input type="submit" id="submit" class="mt-2" value="Log In"/>
+
+                          </fieldset>
+                    		<center>Don't have an Account?</center><center><a href=" {% url 'registration' %} ">Click Here To Register</a></center>
+                    </form>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- end contact_form -->
+{% endblock %}

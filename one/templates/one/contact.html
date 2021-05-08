@@ -1,0 +1,76 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+
+{% block body %}
+    <!-- Start Banner -->
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>Contact Us</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+      <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full text_align_right_img mb-5">
+                        <img src=" {% static 'images/contact.jpeg' %} " alt="#" style="height:400px;width:400px; margin-top: 50px;"/>
+                    </div>
+                </div>
+                <div class="col-md-6 layout_padding">
+                    <div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+                            <div class="main">
+
+                <div class="signup-form">
+                    <form method="POST" action=" {% url 'home' %} " class="register-form mb-5" id="register-form">
+                        {{msg}}
+                       {% csrf_token %} <div class="form-row">
+
+                            <table>
+                                <tr>
+                                    <th>
+                                        <h3>Name :</h3>
+                                    </th>
+                                    <td>
+                                        <input type="text" name="fname" id="name" value="{{request.user.first_name}} {{request.user.last_name}}"required/>
+                                    </td>
+                                </tr>
+
+
+                            <tr>
+                                <th> <label for="email"><h3>Email ID :</h3></label></th>
+                            <td>
+                            <input type="email" name="email" id="email" value="{{request.user.email}}"/></td>
+                        </tr>
+
+                            <th>
+                                <label for="contact"><h3>Contact :</h3></label>
+                            </th>
+                            <td><input type="text" name="contact" id="contact" value="{{user_info.contact}}"/></td>
+                        </tr>
+
+                            <th>
+                                <label for="contact"><h3>Message :</h3></label>
+                            </th>
+                            <td><input type="tel" name="contact" id="message" required/></td>
+                        </tr>
+
+                            <td><input type="reset" value="Reset" class="main_bt"name="reset" id="reset" /></td>
+                            <td><input type="submit" value="Submit" class="main_bt" name="submit"/></td>
+                        </tr>
+
+                </table></div>
+
+                    </form>   </div></div></div></div>
+            </div>
+        </div>
+        </div>
+    <!-- contact_form -->
+          {%endblock%}</div>

@@ -1,0 +1,46 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+{% block body %}
+    <!-- Start Banner -->
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>Hospitals</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+
+   <!-- section -->
+    <div class="section layout_padding">
+        <div class="container">
+
+
+            <div class="row">
+                {% for i in govt_bodies %}
+                {% if i.type|stringformat:"s" == "Hospital"  %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog my-5">
+                       <img class="img-responsive" src="{{ i.logo.url }}" style="height: 40vh; width: 100%;" />
+                       <div class="overlay"><a class="main_bt transparent" href="/one/view_govbody/{{i.id}}">View</a></div>
+                       <div class="blog_details">
+                         <h3>{{i.name}}</h3>
+                         <p>{{i.contact}}</p>
+                       </div>
+                    </div>
+                </div>
+            {%endif%}
+            {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- end section -->
+
+    {% endblock %}
+   

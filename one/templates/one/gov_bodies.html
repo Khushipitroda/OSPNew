@@ -1,0 +1,93 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+{% block body %}
+
+    <!-- Start Banner -->
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>Government Bodies</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+
+   <!-- section -->
+   <!-- section -->
+    <div class="section layout_padding">
+        <div class="container">
+            <div class="row">
+            	  <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                        <img class="img-responsive" src=" {% static 'images/hospital.jpg' %} " alt="Hospital" />
+                        <div class="overlay"><a class="main_bt transparent" href=" {% url 'g-hospital' %} ">View</a></div>
+                       <div class="blog_details">
+                         <h3>Hospitals</h3>
+                         <p>The Government of India launched a unique public health insurance scheme in 2018 called Ayushman Bharat.</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                        <img class="img-responsive" src=" {% static 'images/college.jpg' %} " alt="College" />
+                        <div class="overlay"><a class="main_bt transparent" href=" {% url 'g-college' %} ">View</a></div>
+                       <div class="blog_details">
+                         <h3>Colleges</h3>
+                         <p>The Indian Education system is the world’s third-largest Higher Education System which comprises enrolling more than 20 million students.</p>
+                       </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                        <img class="img-responsive" src=" {% static 'images/school.jfif' %} " alt="School" />
+                        <div class="overlay"><a class="main_bt transparent" href=" {% url 'g-school' %}">View</a></div>
+                       <div class="blog_details">
+                         <h3>Schools</h3>
+                         <p>The higher educational sector in India is the largest in the world with more than 70 million enrollments.</p>
+                       </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                       <img class="img-responsive" src=" {% static 'images/police.png' %} " alt="police" />
+                       <div class="overlay"><a class="main_bt transparent" href=" {% url 'g-policestation' %}">View</a></div>
+                       <div class="blog_details">
+                         <h3>Police Stations</h3>
+                         <p>A police station (sometimes called a "station house") is a building which serves to accommodate police officers and other members of staff. </p>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                        <img class="img-responsive" src=" {% static 'images/courttt.jpg' %} " alt="court" />
+                        <div class="overlay"><a class="main_bt transparent" href="{% url 'g-court' %}">View</a></div>
+                       <div class="blog_details">
+                         <h3>Courts</h3>
+                         <p>In its initial years, the highest court used to sit from 10 am to 12 and afterwards from 2 pm to 4 pm for only 28 days in a year. </p>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog">
+                       <img class="img-responsive" src=" {% static 'images/offices.jpeg' %} " alt="office" />
+                       <div class="overlay"><a class="main_bt transparent" href="{% url 'g-office' %} ">View</a></div>
+                       <div class="blog_details">
+                         <h3>Offices</h3>
+                         <p>a building or set of rooms in which the business of a department of government administration is carried out.</p>
+                       </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <!-- end section -->
+    <!-- end section -->
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+<!-- Basic -->
+{% block body %}
+
+
+
+    <!-- section -->
+        <div class="section layout_padding about_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+                           <h2>Application Form</h2>
+                        </div>
+                    </div>
+                    <div class="full paddding_left_15">
+                    <form method="POST" action=" {% url 'home' %} " class="application-form" id="register-form">
+                       {% csrf_token %} <div class="form-row">
+                            <table>
+
+                            <tr>
+                                <th>
+                                <label for="anumber"><h3>Adhar Number :</h3></label></th>
+                                <td>
+                                <input type="text" name="anumber" id="anumber" value="{{user_info.anumber}}" required/></td>
+                                <td></td>
+                            <th>
+                            <label for="occupation"><h3>Policy Name :</h3></label></th>
+                            <td>
+                            <div class="form-select">
+                                <select name="occupation" id="occupation" style="width:227px;height:70px;" >
+                                    <option value="select"></option>
+                                {% for policy in policy %}
+                                    <option value="{{policy.name}}">{{policy.name}}</option>
+                                {%endfor%}
+                                </select>
+                            </div></td>
+                        <tr>
+                                <tr>
+                            <th><label for="first_name"><h3>First Name :</h3></label></th>
+                             <td>
+                                <input type="text" name="first_name" id="first_name"   value="{{request.user.first_name}} "required/></td><td></td>
+
+                                <th><label for="last_name"><h3>Last Name :</h3></label></th>
+                             <td>
+                                <input type="text" name="last_name" id="last_name"  value="{{request.user.last_name}}"required/></td>
+                            </tr>
+                                <tr> <th><label><h3>Gender :</h3></label></th>
+                                    <td>
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    <label for="male">Male</label>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female">Female</label>
+                                    <input type="radio" id="other" name="gender" value="other">
+                                    <label for="other">Other</label>
+                                    </td><td></td>
+
+
+                            <th><label for="Passbook_Number"><h3>Passbook Number :</h3></label></th>
+                             <td>
+                                <input type="text" name="Passbook_Number" id="Passbook_Number"  required/></td>
+                            </tr>
+                                <tr>
+                            <th><label for="Address"><h3>Address :</h3></label></th>
+                             <td>
+                                <input type="text" name="Address" id="Address"  required/></td><td></td>
+
+                            <th><label for="state"><h3>State :</h3></label></th>
+                             <td>
+                                <input type="text" name="state" id="state"  required/></td>
+                            </tr>
+                                <tr>
+                            <th><label for="District"><h3>District :</h3></label></th>
+                             <td>
+                                <input type="text" name="District" id="District"  required/></td><td></td>
+
+                            <th><label for="Mandal"><h3>Mandal :</h3></label></th>
+                             <td>
+                                <input type="text" name="Mandal" id="Mandal"  required/></td>
+                            </tr>
+                                <tr>
+                            <th><label for="Village/ Ward"><h3>Village/ Ward :</h3></label></th>
+                             <td>
+                                <input type="text" name="Village/ Ward" id="Village/ Ward"  required/></td><td></td>
+
+                            <th><label for="Name of the Cluster Group"><h3>Name of the Cluster Group :</h3></label></th>
+                             <td>
+                                <input type="text" name="Name of the Cluster Group" id="Name of the Cluster Group"  required/></td>
+                            </tr>
+                                <tr>
+                            <th><label for="Name of the Species"><h3>Name of the Species :</h3></label></th>
+                             <td>
+                                <input type="text" name="Name of the Species" id="Name of the Species"  required/></td><td></td>
+
+                            <th><label for="Bank Account Number"><h3>Bank Account Number :</h3></label></th>
+                             <td>
+                                <input type="text" name="Bank Account Number" id="Bank Account Number"  required/></td>
+                            </tr>
+                                <tr>
+                            <th><label for="Name of the Bank "><h3>Name of the Bank :</h3></label></th>
+                             <td>
+                                <input type="text" name="Name of the Bank " id="Name of the Bank "  required/></td><td></td>
+
+                            <th><label for="IFSC Code"><h3>IFSC Code :</h3></label></th>
+                             <td>
+                                <input type="text" name="IFSC Code" id="IFSC Code"  required/></td>
+                            </tr>
+                                <tr>
+                            <th><label for="Branch"><h3>Branch :</h3></label></th>
+                             <td>
+                                <input type="text" name="Branch" id="Branch"  required/></td><td></td>
+
+                            <th><label for="Pincode"><h3>Pincode :</h3></label></th>
+                             <td>
+                                <input type="text" name="Pincode" id="Pincode"  required/></td>
+                            </tr>
+                                <tr>
+                            <th><label><h3>Caste Category :</h3></label></th>
+                             <td>
+                                <input type="checkbox" name="Caste Category" id="SC"  value="SC"/>SC
+                                <input type="checkbox" name="Caste Category" id="ST"  value="ST"/>ST
+                                 <input type="checkbox" name="Caste Category" id="SEBC"  value="SEBC"/>SEBC
+                                <input type="checkbox" name="Caste Category" id="General"  value="General"/>General</td><td></td>
+
+                                   <th><lable for="Mobile Number"><h3>Mobile Number :</h3></lable></th>
+                                   <td><input type="text" name="Mobile Number" id="Mobile Number"  required/></td></td>
+                               </tr>
+                                 <tr>
+                                   <th><lable for="email"><h3>Email :</h3></lable></th>
+                                   <td><input type="email" name="email" id="email"  required/></td></td>
+                               </tr>
+
+                            <tr>
+                            <td></td><td><input type="reset" value="Reset" class="main_bt" name="reset" id="reset" /></td>
+                            <td></td><td><input type="submit" value="Submit" class="main_bt" name="submit" /></td>
+                        </tr>
+
+                            </table></div></form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

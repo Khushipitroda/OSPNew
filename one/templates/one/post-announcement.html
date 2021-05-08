@@ -1,0 +1,53 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+{% block body %}
+
+    <!-- Start Banner -->
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>Posts</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+    
+    <!-- section -->
+      <div class="section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+                           <a href=" {% url 'posts' %} "><h2><span class="theme_color"></span>News</h2> </a>
+                           <h2></h2>
+                          <a href=" {% url 'post-announcement' %} "> <h2><span class="theme_color"></span>Announcments</h2></a>
+                           <h2></h2>
+                          <a href=" {% url 'post-bills' %} "> <h2><span class="theme_color"></span>Bills</h2></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+   
+            <div class="row" >
+              {% for i in post_announcement %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="full news_blog my-5">
+                       <img class="img-responsive" src="{{ i.logo.url }}" style="height: 40vh; width: 100%;" />
+                       <div class="overlay"><a class="main_bt transparent" href="/one/view_postannc/{{i.id}}/">View</a></div>
+                       <div class="blog_details">
+                         <h3>{{i.name}}</h3>
+                         <p>{{i.date}}</p>
+                       </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+   {%endblock%}

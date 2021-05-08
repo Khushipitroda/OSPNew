@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>One Stop Government Portal</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="{% static 'image/x-icon' %}"/>
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href=" {% static 'css/pogo-slider.min.css' %}"/>
+    <!-- Site CSS -->
+    <link rel="stylesheet" href= " {% static 'css/style.css' %}"/>
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href= " {% static 'css/responsive.css' %}" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href= "{% static 'css/custom.css' %}"/>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+ {% csrf_token %}
+
+{% block css %}
+{% endblock %}
+<body id="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="loader">
+            <img src="{% static 'images/loader.gif' %}" alt="#" />
+        </div>
+    </div>
+    <!-- end loader -->
+    <!-- END LOADER -->
+
+    <!-- Start header -->
+    {% if user.is_authenticated %}
+    <header class="top-header">
+        <div class="header_top">
+
+           <div class="container">
+                <div class="row">
+                    <div class="logo_section">
+                        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="image"></a>
+                    </div>
+                    <div class="site_information">
+                        <ul>
+                            <li><a href="mailto:exchang@gmail.com"><img src="{% static 'images/mail_icon.png' %}" alt="#" />http://www.india.gov.in/</a></li>
+                            <li><a href="tel:exchang@gmail.com"><img src="{% static 'images/phone_icon.png' %}" alt="#" />+91 9016982262</a></li>
+
+                            <li><a href="/one/user_info/"><h2>{{request.user.first_name}}  </h2></a><a class="join_bt" href="{% url 'logout' %}">Log Out</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="header_bottom">
+          <div class="container">
+            <div class="col-sm-12">
+                <div class="menu_orange_section" style="background: #ff880e;">
+                   <nav class="navbar header-nav navbar-expand-lg">
+                     <div class="menu_section">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                  <ul class="navbar-nav">
+                        <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                        <li><a class="nav-link" href="{% url 'policies' %}">Policies</a></li>
+                        <li><a class="nav-link" href="{% url 'posts' %}">Posts</a></li>
+                        <li><a class="nav-link" href="{% url 'gov_bodies' %}">GovBodies</a></li>
+                        <li><a class="nav-link" href="{% url 'about' %}">AboutUs</a></li>
+                        <li><a class="nav-link" href="{% url 'mydocs' %}">MyDocs</a></li>
+                        
+                    </ul>
+                </div>
+
+                     </div>
+                 </nav>
+                
+
+                </div>
+            </div>
+          </div>
+        </div>
+
+    </header>
+
+    {% else %}
+    
+    <header class="top-header">
+        <div class="header_top">
+
+            <div class="container">
+                <div class="row">
+                    <div class="logo_section">
+                        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="image"></a>
+                    </div>
+                    <div class="site_information">
+                        <ul>
+                            <li><a href="mailto:onestopportalkks@gmail.com"><img src="{% static 'images/mail_icon.png' %}" alt="#" />http://www.india.gov.in/</a></li>
+                            <li><a href="tel:exchang@gmail.com"><img src="{% static 'images/phone_icon.png' %}" alt="#" />+91 9016982262</a></li>
+                            <li><a class="join_bt" href="{% url 'login' %}">Log In</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="header_bottom">
+          <div class="container">
+            <div class="col-sm-12">
+                <div class="menu_orange_section" style="background: #ff880e;">
+                   <nav class="navbar header-nav navbar-expand-lg">
+                     <div class="menu_section">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                  <ul class="navbar-nav">
+                       <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                        
+                        
+                        
+                        <li><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+                        
+                    </ul>
+                </div>
+                     </div>
+                 </nav>
+                 <div class="search-box">
+                    <input type="text" class="search-txt" placeholder="Search">
+
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+    </header>
+    {% endif %}
+
+    {% block body %}{% endblock %}
+
+     <footer class="footer-box">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-12 white_fonts">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <img class="img-responsive" src=" {% static 'images/footer_logo.png' %} " alt="#" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <h3>Quick Links</h3>
+                            </div>
+                            <div class="full">
+                                <ul class="menu_footer">
+                                   <li><a href="{% url 'home' %}">> Home</a></li>
+                                    <li><a href="{% url 'policies' %}">> Policies</a></li>
+                                    <li><a href="{% url 'posts' %}">> Posts</a></li>
+                                    <li><a href="{% url 'gov_bodies' %}">> Gov Bodies</a></li>
+                                    <li><a href="{% url 'about' %}">> About Us</a></li>
+                                    <li><a href="{% url 'mydocs' %}">> My Docs</a></li>
+                                    <li><a href="{% url 'contact' %}">> Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <div class="footer_blog full white_fonts">
+                             <h3>Newsletter</h3>
+                             <p>Subscribe with us to stay up-to-date</p>
+                             <div class="newsletter_form">
+                                <form action="{% url 'home' %}">
+                                   <input type="email" placeholder="Your Email" name="#" required="">
+                                   <button>Submit</button>
+                                </form>
+                             </div>
+                         </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <div class="footer_blog full white_fonts">
+                                    <h3>Contact us</h3>
+                                    <ul class="full">
+                                        <li><img src=" {% static 'images/i5.png' %} "><span>Ahmedabad<br>India</span></li>
+                                        <li><a href="mailto:onestopportalkks@gmail.com"><img src="{% static 'images/i6.png' %}" alt="#" />onestopportalkks@gmail.com</a></li>
+                                        <li><a href="tel:exchang@gmail.com"><img src="{% static 'images/i7.png' %}" alt="#" />+91 9016982262</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    }
+    </footer>
+    <!-- End Footer -->
+
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="crp">© Copyrights 2021 One Stop Government Portal </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src=" {% static 'js/jquery.min.js' %} "></script>
+    <script src=" {% static 'js/popper.min.js' %} "></script>
+    <script src=" {% static 'js/bootstrap.min.js' %} "></script>
+    <!-- ALL PLUGINS -->
+    <script src=" {% static 'js/jquery.magnific-popup.min.js' %} "></script>
+    <script src=" {% static 'js/jquery.pogo-slider.min.js' %} "></script>
+    <script src=" {% static 'js/slider-index.js' %} "></script>
+    <script src=" {% static 'js/smoothscroll.js' %} "></script>
+    <script src=" {% static 'js/form-validator.min.js' %} "></script>
+    <script src=" {% static 'js/contact-form-script.js' %} "></script>
+    <script src=" {% static 'js/isotope.min.js' %} "></script>
+    <script src=" {% static 'js/images-loded.min.js' %} "></script>
+    <script src=" {% static 'js/custom.js' %} "></script>
+    <script>
+    /* counter js */
+    </script>
+</body>
+
+</html>

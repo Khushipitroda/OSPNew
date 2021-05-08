@@ -1,0 +1,124 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+
+{% block body %}
+ <!-- Start Banner -->
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>Registration</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+
+    <!-- section -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full text_align_right_img mb-5">
+                        <img src=" {% static 'images/img3.jpg' %} " alt="#" style="height:400px;width:400px; margin-top: 50px;"/>
+                    </div>
+                </div>
+                <div class="col-md-6 layout_padding">
+                    <div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+                            <div class="main">
+
+                <div class="signup-form">
+                    <form method="POST" action=" {% url 'registration' %} " class="register-form mb-5" id="register-form">
+                        {{msg}}
+                       {% csrf_token %} <div class="form-row">
+                            
+                            <table>
+                                <tr>
+                                    <th>
+                                        <h3>First Name :</h3>
+                                    </th>
+                                    <td>
+                                        <input type="text" name="fname" id="name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <h3>Last Name :</h3>
+                                    </th>
+                                    <td>
+                                        <input type="text" name="lname" id="lname" required/>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <th>
+                                <label for="anumber"><h3>Adhar Number:</h3></label></th>
+                                <td>
+                                <input type="text" name="anumber" id="anumber" required/></td>
+                            </tr>
+                            <tr>
+                                <th> <label for="email"><h3>Email ID :</h3></label></th>
+                            <td>
+                            <input type="email" name="email" id="email" /></td>
+                        </tr>
+                        <tr><th><h3>Role :</h3></th>
+                            <td>
+                                <select name="role" id="role" style="width:227px;height:70px;">
+                                    <option value="citizen"></option>
+                                    <option value="citizen"><h3>Citizen</h3></option>
+                                    <option value="Government_Employee">Government_Employee</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                            <label for="occupation"><h3>Occupation :</h3></label></th>
+                            <td>
+                            <div class="form-select">
+                                <select name="Occupation" id="occupation"style="width:227px;height:70px;">
+                                    <option value="select"></option>
+                                    <option value="Farmer">Farmer</option>
+                                    <option value="House wife">House wife</option>
+                                    <option value="Doctor">Doctor</option>
+                                    <option value="Government-Job">Government-Job</option>
+                                </select>
+                            </div></td>
+                        <tr>
+                            <th>
+                                <label for="contact"><h3>Contact :</h3></label>
+                            </th>
+                            <td><input type="tel" name="contact" id="contact" required/></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="password"><h3>Password :</h3></label>
+                            </th>
+                            <td>
+                                <input type="password" name="password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                <label for="repassword"><h3>Retype Password :
+                                </h3></label></th>
+                            <td>
+
+                                <input type="password" name="repassword" id="repassword"required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/></td>
+                            </tr>
+                            <tr>
+
+
+                            <td><input type="reset"class="main_bt" value="Reset" class="submit" name="reset" id="reset" /></td>
+                                <td><input type="submit" class="main_bt"value="Submit" class="submit" name="submit"  /></td></tr>
+                        </tr>
+                        <tr><td>Already an Account?</td>
+                            <td><a href=" {% url 'login' %} ">Click Here To Login</a></td>
+                        </tr>
+                </table></div>
+
+                    </form>   </div></div></div></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

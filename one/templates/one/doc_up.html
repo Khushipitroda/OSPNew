@@ -1,0 +1,86 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+
+{% block body %}
+
+    <!-- Start Banner -->
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>My Documents</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+    
+    <!-- contact_form -->
+    <div class="section contact_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 offset-lg-3">
+                    <div class="full">
+                        <form class="contact_form_inner" action="/doc_up/" method="POST" enctype="multipart/form-data">
+                            <fieldset>
+                                    <table>
+                                    <tr>
+                                    <td>Adhar Card:</td>
+                                    <td><input type="file" name="adhar card" class = "file"/></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Pan Card:</td>
+                                    <td>
+                                    <input type="file" name="name" class = "file"/></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Voting Card:</td>
+                                    <td>
+                                    <input type="file" name="name"/></td>
+                                    </tr>
+                                    <tr>
+                                    <td>Passport:</td>
+                                    <td>
+                                    <input type="file" name="name"/></td>
+                                    </tr>
+                                    <tr><td>Rashan Card:</td>
+                                    <td><input type="file" name="name"/></td>
+                                    </tr>
+                                    <tr><td>RC Book:</td>
+                                    <td><input type="file" name="name"/></td>
+                                    </tr>
+                                    <tr><td>Driving License:</td>
+                                    <td><input type="file" name="name"/></td>
+                                    </tr>
+                                    </tr>
+                                    <tr><td>Income Certificate:</td>
+                                    <td><input type="file" name="name"/></td>
+                                    </tr>
+                                    </tr>
+                                    <tr><td>Non-criminal certificate:</td>
+                                    <td><input type="file" name="name"/></td>
+                                    </tr>
+                                    </tr>
+                                    <tr><td>Other</td>
+                                    <td><input type="file" name="name"/></td>
+                                    </tr>
+                                    <tr colspan="2">
+                                        <th >
+                                    <center><button type="submit">SAVE</button></center>
+                                </th></tr>
+                                </table>
+
+                                    
+
+                            </fieldset></form></div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end contact_form -->
+{% endblock %}

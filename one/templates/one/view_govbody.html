@@ -1,0 +1,53 @@
+{% extends 'one/basic.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+	h5{
+		font-size: 20px;
+		
+		display: inline;
+	}
+	p{
+		display: inline;
+	}
+	h2,img {
+  		transition: all 400ms;
+	}
+	h2:hover,img:hover {
+	  	transform: scale(1.08);
+	}
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+	<section class="container my-5">
+				<div class="row mt-5">
+					<div class="col-md-8 posts-w3ls mt-md-0 mt-4">
+						<div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+                           <h2 style=" padding-top:35px;"><span class="theme_color">{{v.name}}</span></h2>
+                        </div>
+                    </div>
+
+						<p> {{v.type}}</p><br>
+						<h5 class="mt-2"><u>Address :</u></h5> <p> {{v.address}}</p><br>
+						<h5 class="mt-2"><u>Contact :</u></h5> <p> {{v.contact}}</p><br>
+						<h5 class="mt-2"><u>Description :</u></h5> <p> {{v.desc}}</p><br>
+						<br>
+
+
+					</div>
+					<div class="col-md-4 posts-w3ls mt-md-0 mt-4">
+						<div class="price-top">
+						<img src="{{v.logo.url}}" class="img-fluid" style="height: 40vh;
+  box-shadow: 10px 10px 5px #aaaaaa;" />
+						</div>
+					</div>
+				</div>
+		</section>
+
+
+{% endblock %}
